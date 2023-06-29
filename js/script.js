@@ -41,14 +41,14 @@
 
     for (const task of tasks) {
       htmlString += `
-        <li class="tasks__item">
-          <button class="tasks__button tasks__button--toggleDone js-done">
-            ${task.done ? "✔" : ""}
-          </button>
-          <span class="tasks__content${task.done ? " tasks__content--done" : ""}">${task.content}</span>
-          <button class="tasks__button tasks__button--remove button js-remove">🗑️</button>
-        </li>
-      `;
+          <li class="tasks__item">
+              <button class="tasks__button tasks__button--toggleDone js-done">
+                ${task.done ? "✔" : ""}
+              </button>
+              <span class="tasks__content${task.done ? " tasks__content--done" : ""}">${task.content}</span>
+              <button class="tasks__button tasks__button--remove js-remove">🗑️</button>
+          </li>
+        `;
     }
 
     document.querySelector(".js-tasks").innerHTML = htmlString;
@@ -56,27 +56,27 @@
     bindEvents();
   };
 
-const onFormSubmit = (event) => {
-  event.preventDefault();
+  const onFormSubmit = (event) => {
+    event.preventDefault();
 
-  const newTaskItem = document.querySelector(".js-newTask");
-  const newTaskContent = newTaskItem.value.trim();
+    const newTaskItem = document.querySelector(".js-newTask");
+    const newTaskContent = newTaskItem.value.trim();
 
-  if (newTaskContent !== "") {
-    addNewTask(newTaskContent);
-    newTaskItem.value = "";
-  }
+    if (newTaskContent !== "") {
+      addNewTask(newTaskContent);
+      newTaskItem.value = "";
+    }
 
-  newTaskItem.focus();
-};
+    newTaskItem.focus();
+  };
 
-const init = () => {
-  render();
+  const init = () => {
+    render();
 
-  const form = document.querySelector(".js-form");
+    const form = document.querySelector(".js-form");
+    
+    form.addEventListener("submit", onFormSubmit);
+  };
 
-  form.addEventListener("submit", onFormSubmit);
-};
-
-init();
+  init();
 }
