@@ -18,6 +18,24 @@
     render();
   };
 
+  const bindEvents = () => {
+    const toggleDoneButtons = document.querySelectorAll(".js-done");
+
+    toggleDoneButtons.forEach((toggleDoneButton, index) => {
+      toggleDoneButton.addEventListener("click", () => {
+        toggleTaskDone(index);
+      });
+    });
+
+    const removeButtons = document.querySelectorAll(".js-remove");
+
+    removeButtons.forEach((removeButton, index) => {
+      removeButton.addEventListener("click", () => {
+        removeTask(index);
+      });
+    });
+  }
+
   const render = () => {
     let htmlString = "";
 
@@ -34,15 +52,9 @@
     }
 
     document.querySelector(".js-tasks").innerHTML = htmlString;
+
+    bindEvents();
   };
-
-  const toggleDoneButtons = document.querySelectorAll(".js-done");
-
-  toggleDoneButtons.forEach((toggleDoneButton, index) => {
-    toggleDoneButton.addEventListener("click", () => {
-      toggleTaskDone(index);
-    });
-  })
 
 const onFormSubmit = (event) => {
   event.preventDefault();
@@ -57,12 +69,6 @@ const onFormSubmit = (event) => {
 
   newTaskItem.focus();
 };
-
-removeButtons.forEach((removeButton, index) => {
-  removeButton.addEventListener("click", () => {
-    removeTask(index);
-  });
-})
 
 const init = () => {
   render();
