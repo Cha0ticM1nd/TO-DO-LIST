@@ -2,7 +2,7 @@
 
 ## Here will be a snippet of what you can see on my website:
 
-### If you'd like to see more click here
+### If you'd like to see more click [here](https://cha0ticm1nd.github.io/TO-DO-LIST/)
 
 ## Description
 This project was created to practice copying a design shown in a video from the course and functionality in JavaScript. The website is divided into two section: in the first one with a heading "Ddoaj nowe zadanie" there is a simple form enabling adding tasks to the list - which is locatetd in the second section with a heading "Lista zadań". 
