@@ -1,6 +1,8 @@
 ﻿# TO-DO LIST
 
-## Here will be a snippet of what you can see on my website:
+## Here's a snippet of what you can see on my website:
+
+![to-do-list](https://github.com/Cha0ticM1nd/TO-DO-LIST/assets/127432678/8e1b0c9b-b353-4de8-af48-944fe34c98f5)
 
 ### If you'd like to see more click [here](https://cha0ticm1nd.github.io/TO-DO-LIST/)
 
